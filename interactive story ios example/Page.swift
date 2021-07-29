@@ -46,14 +46,14 @@ extension Page {
 
 
 struct Adventure {
-    static var story: Page {
-        let returnTrip = Page(story: .returnTrip)
+    static func story(withName name: String) -> Page {
+        let returnTrip = Page(story: .returnTrip(name: name))
         
        let touchDown = returnTrip.addChoiceWith(title: "Stop and Investigate", story: .touchDown)
         
         let homeward = returnTrip.addChoiceWith(title: "Continue home to Earth", story: .homeward)
         
-        let rover = touchDown.addChoiceWith(title: "Explore the rover", story: .rover)
+        let rover = touchDown.addChoiceWith(title: "Explore the rover", story: .rover(name: name))
         let crate = touchDown.addChoiceWith(title: "Open the crate", story: .crate)
         
         homeward.addChoiceWith(title: "Head back to Mars", page: touchDown)
@@ -62,7 +62,7 @@ struct Adventure {
         let cave = rover.addChoiceWith(title: "Explore the Coordinates", story: .cave)
         rover.addChoiceWith(title: "Return to Earth", page: home)
         
-        cave.addChoiceWith(title: "Continue towards faints light", story: .droid)
+        cave.addChoiceWith(title: "Continue towards faints light", story: .droid(name: name))
         cave.addChoiceWith(title: "Refill the ship and explore the rover", page: rover)
         
         crate.addChoiceWith(title: "Explore the rover", page: rover)
