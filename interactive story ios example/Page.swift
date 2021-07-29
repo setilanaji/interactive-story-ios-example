@@ -8,6 +8,9 @@
 
 import Foundation
 
+enum AdventureError: Error {
+    case nameNotProvided
+}
 
 class Page {
     let story: Story
