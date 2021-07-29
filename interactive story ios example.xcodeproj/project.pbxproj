@@ -16,6 +16,10 @@
 		8FC1538E26B0762900BFF689 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FC1538D26B0762900BFF689 /* Assets.xcassets */; };
 		8FC1539126B0762900BFF689 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FC1538F26B0762900BFF689 /* LaunchScreen.storyboard */; };
 		8FF7B03D26B2F46C00B3DA4F /* PageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF7B03C26B2F46C00B3DA4F /* PageController.swift */; };
+		8FF7B04226B3190600B3DA4F /* PageTurn.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8FF7B03F26B3190500B3DA4F /* PageTurn.wav */; };
+		8FF7B04326B3190600B3DA4F /* Ominous.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8FF7B04026B3190500B3DA4F /* Ominous.wav */; };
+		8FF7B04426B3190600B3DA4F /* HappyEnding.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8FF7B04126B3190600B3DA4F /* HappyEnding.wav */; };
+		8FF7B04626B3198300B3DA4F /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF7B04526B3198300B3DA4F /* Audio.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		8FC1539026B0762900BFF689 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8FC1539226B0762900BFF689 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8FF7B03C26B2F46C00B3DA4F /* PageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageController.swift; sourceTree = "<group>"; };
+		8FF7B03F26B3190500B3DA4F /* PageTurn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = PageTurn.wav; sourceTree = "<group>"; };
+		8FF7B04026B3190500B3DA4F /* Ominous.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Ominous.wav; sourceTree = "<group>"; };
+		8FF7B04126B3190600B3DA4F /* HappyEnding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HappyEnding.wav; sourceTree = "<group>"; };
+		8FF7B04526B3198300B3DA4F /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +70,7 @@
 		8FC1538326B0762400BFF689 /* interactive story ios example */ = {
 			isa = PBXGroup;
 			children = (
+				8FF7B03E26B3189900B3DA4F /* Resources */,
 				8FC1538426B0762400BFF689 /* AppDelegate.swift */,
 				8FF7B03C26B2F46C00B3DA4F /* PageController.swift */,
 				8FC1538626B0762400BFF689 /* SceneDelegate.swift */,
@@ -72,8 +81,19 @@
 				8F048BF126B19DE20050F5E8 /* Page.swift */,
 				8FC1539226B0762900BFF689 /* Info.plist */,
 				8F048BEF26B196B70050F5E8 /* Story.swift */,
+				8FF7B04526B3198300B3DA4F /* Audio.swift */,
 			);
 			path = "interactive story ios example";
+			sourceTree = "<group>";
+		};
+		8FF7B03E26B3189900B3DA4F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8FF7B04126B3190600B3DA4F /* HappyEnding.wav */,
+				8FF7B04026B3190500B3DA4F /* Ominous.wav */,
+				8FF7B03F26B3190500B3DA4F /* PageTurn.wav */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,8 +154,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FF7B04426B3190600B3DA4F /* HappyEnding.wav in Resources */,
+				8FF7B04326B3190600B3DA4F /* Ominous.wav in Resources */,
 				8FC1539126B0762900BFF689 /* LaunchScreen.storyboard in Resources */,
 				8FC1538E26B0762900BFF689 /* Assets.xcassets in Resources */,
+				8FF7B04226B3190600B3DA4F /* PageTurn.wav in Resources */,
 				8FC1538C26B0762400BFF689 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,6 +176,7 @@
 				8FC1538726B0762400BFF689 /* SceneDelegate.swift in Sources */,
 				8F048BF026B196B70050F5E8 /* Story.swift in Sources */,
 				8F048BF226B19DE20050F5E8 /* Page.swift in Sources */,
+				8FF7B04626B3198300B3DA4F /* Audio.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

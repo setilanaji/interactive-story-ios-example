@@ -17,6 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -56,8 +57,22 @@ class ViewController: UIViewController {
         }
     }
     
+    @objc func keyboardWillHide(_ notification: Notification){
+            textFieldBottomConstraint.constant = 40
+            
+            UIView.animate(withDuration: 0.8){
+                self.view.layoutIfNeeded()
+            }
+    }
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
 }
 
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
