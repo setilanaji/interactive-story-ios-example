@@ -43,18 +43,21 @@ class PageController: UIViewController {
     
     //MARK: - User Interface Properties
     
-    let artworkView: UIImageView = {
+    // lazy use when it is needed, in this case will be use after initialization
+    lazy var artworkView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = self.page?.story.artwork
 
         return imageView
     }()
     
     // closure
-    let storyLabel: UILabel = {
+    lazy var storyLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.attributedText = self.page?.story(attributed: true)
               
         return label
     }()
@@ -88,10 +91,7 @@ class PageController: UIViewController {
         view.backgroundColor = .white
         
         if let page = page {
-            artworkView.image = page.story.artwork
-           
-            storyLabel.attributedText = page.story(attributed: true)
-            
+                       
             if let firstChoice = page.firstChoice {
                 firstChoiceButton.setTitle(firstChoice.title, for: .normal)
                 firstChoiceButton.addTarget(self, action: #selector(PageController.loadFirstChoice), for: .touchUpInside)
